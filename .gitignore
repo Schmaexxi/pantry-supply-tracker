@@ -3,6 +3,8 @@
 .idea/
 *.DS_Store
 
+**/logs
+
 __pycache__
 
 # Distribution / packaging
