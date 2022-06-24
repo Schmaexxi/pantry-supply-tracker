@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 
 this_dir = Path(__file__).parent.resolve()
-version_file_path = this_dir / "pantry_supply_tracker/version.py"
+version_file_path = this_dir / "src/pantry_supply_tracker/version.py"
 version = runpy.run_path(str(version_file_path))["version"]
 
 requirements = [
@@ -25,6 +25,7 @@ setup(
             "pytest",
         ]
     },
-    packages=find_packages(),
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     version=version,
 )

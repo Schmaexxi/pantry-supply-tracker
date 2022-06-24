@@ -1,5 +1,6 @@
 import uvicorn  # type: ignore
 from fastapi import FastAPI
+
 from pantry_supply_tracker.config import app_config
 from pantry_supply_tracker.utils import logger
 

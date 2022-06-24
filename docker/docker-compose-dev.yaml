@@ -3,15 +3,14 @@ version: "3.8"
 services:
   pantry_supply_tracker:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker/Dockerfile
       args:
         - PACKAGE_DEVELOPMENT_MODE=-e
-        - IMAGE_ENV=test
     env_file:
       - .env
-    command: "pytest"
+    command: "python src/pantry_supply_tracker/main.py"
     ports:
       - ${HOST_PORT}:${SERVER_PORT}
     volumes:
-      - ./pantry_supply_tracker:/app/pantry_supply_tracker
+      - ../src/pantry_supply_tracker:/app/src/pantry_supply_tracker

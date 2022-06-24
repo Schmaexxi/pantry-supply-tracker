@@ -3,14 +3,14 @@ version: "3.8"
 services:
   pantry_supply_tracker:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker/Dockerfile
     env_file:
       - .env
-    command: "gunicorn pantry_supply_tracker.main:app --bind 0.0.0.0:${SERVER_PORT} 
+    command: "gunicorn src.pantry_supply_tracker.main:app --bind 0.0.0.0:${SERVER_PORT} 
     --workers 4 
     --worker-class uvicorn.workers.UvicornWorker"
     ports:
       - ${HOST_PORT}:${SERVER_PORT}
     volumes:
-      - ./pantry_supply_tracker:/app/pantry_supply_tracker
+      - ../src/pantry_supply_tracker:/app/src/pantry_supply_tracker
