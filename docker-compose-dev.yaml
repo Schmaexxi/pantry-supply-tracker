@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  pantry_supply_tracker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PACKAGE_DEVELOPMENT_MODE=-e
+    env_file:
+      - .env
+    command: "python pantry_supply_tracker/main.py"
+    ports:
+      - ${HOST_PORT}:${SERVER_PORT}
+    volumes:
+      - ./pantry_supply_tracker:/app/pantry_supply_tracker
