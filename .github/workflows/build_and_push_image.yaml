@@ -33,4 +33,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/Schmaexxi/pantry_supply_tracker:${{steps.extract_version.outputs.tag}}
+          tags: ghcr.io/Schmaexxi/pantry_supply_tracker:0.0.0
+          #tags: ghcr.io/Schmaexxi/pantry_supply_tracker:${{steps.extract_version.outputs.tag}}
