@@ -20,6 +20,6 @@ jobs:
     - name: black
       run: black --check .
     - name: flake8
-      run: flake8 --max-line-length=100 ./pantry_supply_tracker
+      run: flake8 --max-line-length=100 ./src/pantry_supply_tracker
     - name: mypy
-      run: mypy --strict ./pantry_supply_tracker
+      run: mypy --strict ./src/pantry_supply_tracker
